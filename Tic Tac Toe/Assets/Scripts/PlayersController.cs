@@ -11,7 +11,7 @@ public class PlayersController : MonoBehaviour {
 	private static int currentPlayer;
 
 	void Start () {
-		Debug.Log ("Inside the Start");
+
 		numPlayers = 2;
 		currentPlayer = 0;
 		players = new List<Hashtable> ();
@@ -19,7 +19,6 @@ public class PlayersController : MonoBehaviour {
 	}
 
 	void CreatePlayers(){
-		Debug.Log ("Inside CreatePlayers function");
 		for(int x = 0; x < numPlayers; x++){
 			Hashtable newPlayer = new Hashtable ();
 			newPlayer.Add ("number", x+1);
