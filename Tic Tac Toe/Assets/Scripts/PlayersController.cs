@@ -11,6 +11,7 @@ public class PlayersController : MonoBehaviour {
 	private static int currentPlayer;
 
 	void Start () {
+		Debug.Log ("Inside the Start");
 		numPlayers = 2;
 		currentPlayer = 0;
 		players = new List<Hashtable> ();
@@ -18,8 +19,8 @@ public class PlayersController : MonoBehaviour {
 	}
 
 	void CreatePlayers(){
+		Debug.Log ("Inside CreatePlayers function");
 		for(int x = 0; x < numPlayers; x++){
-			Debug.Log (numPlayers);
 			Hashtable newPlayer = new Hashtable ();
 			newPlayer.Add ("number", x+1);
 			newPlayer.Add ("material", flags[x]);
@@ -28,17 +29,16 @@ public class PlayersController : MonoBehaviour {
 	}
 
 	public static void UpdateCurrentPlayer(){
-		if ((currentPlayer + 1) > numPlayers)
+		Debug.Log ("Inside UpdateCurrentPlayer function");
+		if ((currentPlayer + 1) >= numPlayers)
 			currentPlayer = 0;
 		else
 			currentPlayer += 1;
 	}
-
+		
 	public static Hashtable GetCurrentPlayer(){
-		string comb = string.Join (",", players.ToArray ());
-		Debug.Log (comb);
-
-		Debug.Log (currentPlayer);
+		Debug.Log ("Current player being returned: " + currentPlayer);
+		Debug.Log ("current player number: " + players [currentPlayer] ["number"]);
 		return players[currentPlayer];
 	}
 }
