@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayersController : MonoBehaviour {
 
 	public Material[] flags;
-	public int numPlayers;
+	public static int numPlayers;
+	public static List<Hashtable> players;
 
-	private List<Hashtable> players;
+	private static int currentPlayer;
 
 	void Start () {
+		currentPlayer = 0;
 		players = new List<Hashtable> ();
 		CreatePlayers ();
 	}
@@ -21,5 +23,16 @@ public class PlayersController : MonoBehaviour {
 			newPlayer.Add ("material", flags[x-1]);
 			players.Add (newPlayer);
 		}
+	}
+
+	public static void UpdateCurrentPlayer(){
+		if ((currentPlayer + 1) > numPlayers)
+			currentPlayer = 1;
+		else
+			currentPlayer += 1;
+	}
+
+	public static Hashtable GetCurrentPlayer(){
+		return players[currentPlayer];
 	}
 }
