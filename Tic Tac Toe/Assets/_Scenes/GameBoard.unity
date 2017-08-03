@@ -138,8 +138,8 @@ MonoBehaviour:
   tile: {fileID: 1218858820466448, guid: 5e9044b9c63c97146a811ae64a785914, type: 2}
   mainCam: {fileID: 1322549909}
   cameraHeightMultiplier: 4
-  rows: 5
-  columns: 5
+  rows: 3
+  columns: 3
 --- !u!4 &481160355
 Transform:
   m_ObjectHideFlags: 0
@@ -218,6 +218,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1295388378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1295388380}
+  - component: {fileID: 1295388379}
+  m_Layer: 0
+  m_Name: Players
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1295388379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295388378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4fb13c53d53c042a9ab67ce70d5ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flags:
+  - {fileID: 2100000, guid: 65985e78d92c62d41aa2bb0e2885c585, type: 2}
+  - {fileID: 2100000, guid: 6d6a60dcf66ae0845ba4fc3b062f53b9, type: 2}
+  numPlayers: 2
+--- !u!4 &1295388380
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1295388378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.097541295, y: 2.6623945, z: -1.7261567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1322549905
 GameObject:
   m_ObjectHideFlags: 0
