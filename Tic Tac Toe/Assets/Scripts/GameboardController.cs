@@ -14,6 +14,8 @@ public class GameboardController : MonoBehaviour {
 	private List<Hashtable> board;
 	private float cameraScaleMultiplier;
 
+	public class Tile
+
 	void Start () {
 		board = new List<Hashtable>();
 		InstantiateBoard ();
@@ -25,22 +27,28 @@ public class GameboardController : MonoBehaviour {
 		cameraHeightMultiplier *= rows;
 		for(int x = 0; x < rows; x++){
 			for(int y = 0; y < columns; y++){
-				Vector2 coords = new Vector2 ();
-				Hashtable thisTile = new Hashtable ();
-				thisTile.Add ("coords", coords);
-				thisTile.Add("taken", false);
-				board.Add(thisTile);
-				Vector3 pos = new Vector3 (-3 * x, 0.0f, -3 * y);
-				GameObject newTile = Instantiate (tile, pos, Quaternion.identity);
-				TileController tileScript = newTile.GetComponent<TileController> ();
-				tileScript.coords = coords;
-
+				InstantiateNewTile (x, y);
 			}
 		}
 	}
 
+	void InstantiateNewTile(int x, int y){
+		Vector2 coords = new Vector2 (x, y);
+		Hashtable thisTile = new Hashtable ();
+		thisTile.Add ("coords", coords);
+		thisTile.Add("taken", false);
+		board.Add(thisTile);
+		Vector3 pos = new Vector3 (-3 * x, 0.0f, -3 * y);
+		GameObject newTile = Instantiate (tile, pos, Quaternion.identity);
+		newTile.GetComponent<TileController> ().coords = coords;
+	}
+
 	void UpdateCamera() {
 		mainCam.transform.position = new Vector3 (cameraScaleMultiplier, cameraHeightMultiplier, cameraScaleMultiplier);
+	}
+
+	public static void UpdateTile(int playerNum){
+		
 	}
 		
 	public static void CheckWin () {
