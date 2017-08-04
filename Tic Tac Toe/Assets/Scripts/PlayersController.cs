@@ -28,7 +28,6 @@ public class PlayersController : MonoBehaviour {
 	}
 
 	public static void UpdateCurrentPlayer(){
-		Debug.Log ("Inside UpdateCurrentPlayer function");
 		if ((currentPlayer + 1) >= numPlayers)
 			currentPlayer = 0;
 		else
@@ -36,8 +35,6 @@ public class PlayersController : MonoBehaviour {
 	}
 		
 	public static Hashtable GetCurrentPlayer(){
-		Debug.Log ("Current player being returned: " + currentPlayer);
-		Debug.Log ("current player number: " + players [currentPlayer] ["number"]);
 		return players[currentPlayer];
 	}
 }
